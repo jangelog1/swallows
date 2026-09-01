@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Tokyo Yakult Swallows — Standings, Scores &amp; Race</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Swallows">
+<meta name="theme-color" content="#080b14">
+<link rel="apple-touch-icon" href="icon-512.png">
+<link rel="icon" type="image/png" href="icon-512.png">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+  :root{
+    --bg:#080b14; --ink:#f2f5f7; --mut:#96a1ad;
+    --accent:#c8102e; --accent2:#5fa8e8;
+    --live:#3ddc84; --gold:#f5cf7a; --bad:#ff6b83;
+    --glass:rgba(255,255,255,.05); --glass2:rgba(255,255,255,.085);
+    --hair:rgba(255,255,255,.075);
+    --r:22px; --rs:16px; --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    min-height:100vh;padding:0 0 64px;overflow-x:hidden;
+    background:
+      radial-gradient(1100px 620px at 12% -8%, rgba(200,16,46,.13), transparent 62%),
+      radial-gradient(900px 520px at 92% 2%, rgba(95,168,232,.12), transparent 58%),
+      var(--bg);
+    background-attachment:fixed}
+  /* Slow aurora drift, so the page never feels static — carried over from the White Sox app. */
+  body::before{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;
+    background:radial-gradient(closest-side, rgba(200,16,46,.10), transparent 70%);
+    width:70vmax;height:70vmax;left:-10vmax;top:-15vmax;filter:blur(30px);
+    animation:drift 26s ease-in-out infinite alternate}
+  @keyframes drift{to{transform:translate3d(28vw,16vh,0) scale(1.25)}}
+  @media(prefers-reduced-motion:reduce){body::before{animation:none}}
+  .ticker{position:sticky;top:0;z-index:60;overflow:hidden;white-space:nowrap;
+    padding-top:env(safe-area-inset-top,0px);
+    background:linear-gradient(90deg,rgba(10,11,13,.94),rgba(20,22,26,.8));
+    backdrop-filter:blur(14px);border-bottom:1px solid var(--hair)}
+  .ticker-track{display:inline-block;padding:9px 0;font-size:12.5px;color:var(--mut);
+    animation:slide 46s linear infinite}
+  .ticker-track b{color:var(--ink)} .ticker-track .w{color:var(--live)} .ticker-track .l{color:var(--bad)}
+  @keyframes slide{to{transform:translateX(-50%)}}
+  .wrap{max-width:760px;margin:0 auto;padding:22px 14px 40px}
+  header{text-align:center;margin-bottom:16px}
+  .crest{width:96px;height:96px;object-fit:contain;margin:0 auto 10px;display:block;
+    filter:drop-shadow(0 6px 18px rgba(0,0,0,.55))}
+  h1{font-size:clamp(21px,5vw,30px);font-weight:800;letter-spacing:-.02em}
+  .sub{font-size:12.5px;color:var(--mut);margin-top:5px}
+  .chips{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+  .chip,.rbtn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:999px;
+    background:var(--glass);border:1px solid var(--hair);font-size:12.5px;font-weight:600;
+    color:var(--ink);cursor:pointer;font-family:inherit}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:18px 0 16px}
+  nav button{font:inherit;font-size:12.5px;font-weight:700;padding:9px 14px;border-radius:999px;
+    border:1px solid var(--hair);background:var(--glass);color:var(--mut);cursor:pointer;
+    transition:all .2s var(--ease)}
+  nav button.on{background:var(--accent);border-color:var(--accent);color:#0a0a0c}
+  section{display:none} section.on{display:block}
+  .card{background:var(--glass);border:1px solid var(--hair);border-radius:var(--r);
+    padding:16px;margin-bottom:13px}
+  .card h2{font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--mut);
+    font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .big{font-size:38px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .rowt{display:grid;grid-template-columns:22px 1fr auto auto auto;gap:9px;align-items:center;
+    padding:9px 6px;border-radius:10px;font-size:13.5px}
+  .rowt:nth-child(odd){background:rgba(255,255,255,.022)}
+  .rowt.me{background:rgba(200,16,46,.16);outline:1px solid rgba(200,16,46,.4)}
+  .rowt .pos{color:var(--mut);font-size:11px;font-weight:800;text-align:center}
+  .rowt .nm{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .rowt .num{font-variant-numeric:tabular-nums;color:var(--mut);font-size:12.5px;min-width:52px;text-align:right}
+  .rowt img{width:20px;height:20px;object-fit:contain;vertical-align:-4px;margin-right:5px}
+  .gm{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;
+    padding:11px 8px;border-bottom:1px solid var(--hair);font-size:13.5px}
+  .gm:last-child{border-bottom:0}
+  .gm .t{display:flex;align-items:center;gap:7px;min-width:0}
+  .gm .t.r{justify-content:flex-end}
+  .gm img{width:24px;height:24px;object-fit:contain;flex:none}
+  .gm .sc{font-weight:800;font-variant-numeric:tabular-nums;font-size:17px;white-space:nowrap}
+  .gm .win{color:var(--live)}
+  .note{font-size:11.5px;color:var(--mut);line-height:1.5;margin-top:10px}
+  .bar{height:7px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:6px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+  footer{text-align:center;font-size:11px;color:var(--mut);margin-top:26px;line-height:1.6}
+  a{color:var(--accent2)}
+</style>
+</head>
+<body>
+<div class="ticker"><div class="ticker-mask"><div class="ticker-track" id="tickerTrack"></div></div></div>
+<div class="wrap">
+  <header>
+    <img class="crest" id="crest" src="logo.gif" alt="Tokyo Yakult Swallows">
+    <h1>Tokyo Yakult Swallows</h1>
+    <div class="sub">Central League · <b>Meiji Jingu Stadium</b>, Tokyo · <span id="subLine">Loading…</span></div>
+    <div class="chips">
+      <span class="chip" id="chip"><span class="dot"></span><span id="chipTxt">Loading…</span></span>
+      <button class="rbtn" id="refreshBtn">↻ Refresh</button>
+    </div>
+  </header>
+  <nav>
+    <button class="on" data-t="now">⚡ Now</button>
+    <button data-t="standings">📊 Standings</button>
+    <button data-t="race">🏁 Race</button>
+    <button data-t="scores">📅 Scores</button>
+    <button data-t="league">⚾ League</button>
+  </nav>
+  <section class="on" id="now"><div id="nowEl"></div></section>
+  <section id="standings"><div id="standingsEl"></div></section>
+  <section id="race"><div id="raceEl"></div></section>
+  <section id="scores"><div id="scoresEl"></div></section>
+  <section id="league"><div id="leagueEl"></div></section>
+  <footer>
+    Data from <a href="https://npb.jp/eng/" target="_blank" rel="noopener">NPB.jp</a>, the official
+    Nippon Professional Baseball site. Logos are NPB's own team marks.<br>
+    Refreshed on a schedule rather than live — npb.jp sends no CORS header, so a browser cannot
+    read it directly.
+  </footer>
+</div>
+<script>
+const ME="s", $=s=>document.querySelector(s);
+let D=null;
+const logo=c=>`logos/${c}.gif`;
+const esc=s=>String(s??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+
+async function load(){
+  try{
+    const r=await fetch("npb.json?t="+Date.now(),{cache:"no-store"});
+    D=await r.json();
+  }catch(e){ D=null; }
+  paint();
+}
+function ago(iso){
+  if(!iso) return "—";
+  const ms=Date.now()-Date.parse(iso), m=ms/6e4;
+  if(m<1) return "just now";
+  if(m<60) return Math.round(m)+" min ago";
+  if(m<48*60) return Math.round(m/60)+" hr ago";
+  return Math.round(m/1440)+" days ago";
+}
+function myLeague(){
+  if(!D) return [];
+  for(const lg in D.standings) if((D.standings[lg]||[]).some(t=>t.code===ME)) return D.standings[lg];
+  return [];
+}
+function me(){ return myLeague().find(t=>t.code===ME)||null; }
+
+function paint(){
+  if(!D){ $("#chipTxt").textContent="offline"; $("#nowEl").innerHTML=
+    `<div class="card"><h2>No data</h2><div class="note">npb.json could not be loaded.</div></div>`; return; }
+  $("#chipTxt").textContent="built "+ago(D.built);
+  $("#subLine").textContent=D.season+" season";
+  const m=me(), tbl=myLeague(), pos=tbl.findIndex(t=>t.code===ME)+1;
+
+  // ---- NOW: where the team stands and the last result involving it
+  const mine=(D.games||[]).filter(g=>g.awayCode===ME||g.homeCode===ME);
+  let h="";
+  if(m){
+    const pct=m.pct||"—", gb=(m.gb&&m.gb!=="--")?`${m.gb} games back`:"leading the league";
+    h+=`<div class="card"><h2>⚡ Right now</h2>
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <span class="big">${m.w}-${m.l}${m.t?`-${m.t}`:""}</span>
+        <span style="color:var(--mut)">${pct} · ${esc(gb)}</span></div>
+      <div style="margin-top:6px;font-size:13px;color:var(--mut)">
+        ${pos ? `<b style="color:var(--ink)">${pos}${["st","nd","rd"][pos-1]||"th"}</b> of ${tbl.length} in the ${esc(D.teams[ME].league)} League` : ""}
+        · ${m.g} games played</div>
+      <div class="bar"><i style="width:${Math.round((m.w/Math.max(1,m.w+m.l))*100)}%"></i></div>
+      <div class="note">Bar is win share. Home ${esc(m.home||"—")} · Road ${esc(m.road||"—")}</div></div>`;
+  }
+  if(mine.length){
+    h+=`<div class="card"><h2>📅 Last time out</h2>${mine.map(gameRow).join("")}
+      <div class="note">${esc(mine[0].date||"")}</div></div>`;
+  } else {
+    h+=`<div class="card"><h2>📅 Last time out</h2><div class="note">No Swallows game in the most
+      recent set of finals — the last scores published were ${esc((D.games||[])[0]?.date||"—")}.</div></div>`;
+  }
+  $("#nowEl").innerHTML=h;
+
+  $("#standingsEl").innerHTML=`<div class="card"><h2>📊 ${esc(D.teams[ME].league)} League</h2>
+    ${tbl.map((t,i)=>teamRow(t,i+1)).join("")}
+    <div class="note">GB = games behind the leader. T = ties, which NPB plays and MLB does not.</div></div>`;
+
+  // ---- RACE: distance to first, as a bar per team
+  const lead=tbl[0];
+  $("#raceEl").innerHTML=`<div class="card"><h2>🏁 Race to first</h2>
+    ${tbl.map(t=>{
+      const gb=parseFloat(t.gb)||0, max=Math.max(1,...tbl.map(x=>parseFloat(x.gb)||0));
+      return `<div style="margin-bottom:11px">
+        <div style="display:flex;justify-content:space-between;font-size:13px;${t.code===ME?"font-weight:800":""}">
+          <span><img src="${logo(t.code)}" style="width:18px;height:18px;object-fit:contain;vertical-align:-4px;margin-right:6px">${esc(t.short)}</span>
+          <span style="color:var(--mut);font-variant-numeric:tabular-nums">${t.gb==="--"?"leader":t.gb+" GB"}</span></div>
+        <div class="bar"><i style="width:${100-Math.round(gb/max*100)}%;${t.code===ME?"":"opacity:.45"}"></i></div></div>`;
+    }).join("")}
+    <div class="note">Longer bar = closer to first. ${lead?`<b>${esc(lead.short)}</b> lead.`:""}</div></div>`;
+
+  $("#scoresEl").innerHTML=`<div class="card"><h2>📅 ${esc((D.games||[])[0]?.date||"Latest scores")}</h2>
+    ${(D.games||[]).map(gameRow).join("")||'<div class="note">No finals published.</div>'}
+    <div class="note">Every NPB game from the most recent completed day, both leagues.</div></div>`;
+
+  $("#leagueEl").innerHTML=Object.keys(D.standings).map(lg=>
+    `<div class="card"><h2>⚾ ${esc(lg)} League</h2>
+      ${(D.standings[lg]||[]).map((t,i)=>teamRow(t,i+1)).join("")}</div>`).join("");
+
+  const bits=(D.games||[]).map(g=>{
+    const aw=g.awayScore>g.homeScore;
+    return `<b>${esc(g.away)}</b> <span class="${aw?"w":"l"}">${g.awayScore}</span> – <span class="${aw?"l":"w"}">${g.homeScore}</span> <b>${esc(g.home)}</b>`;
+  });
+  $("#tickerTrack").innerHTML=(bits.length?bits.join(" &nbsp;·&nbsp; ")+" &nbsp;·&nbsp; ":"")
+    .repeat(2)||"NPB "+D.season;
+}
+function teamRow(t,pos){
+  return `<div class="rowt ${t.code===ME?"me":""}">
+    <span class="pos">${pos}</span>
+    <span class="nm"><img src="${logo(t.code)}" alt="">${esc(t.short)}</span>
+    <span class="num">${t.w}-${t.l}${t.t?`-${t.t}`:""}</span>
+    <span class="num">${esc(t.pct||"")}</span>
+    <span class="num">${t.gb==="--"?"—":esc(t.gb||"")}</span></div>`;
+}
+function gameRow(g){
+  const aw=g.awayScore>g.homeScore, hw=g.homeScore>g.awayScore;
+  return `<div class="gm">
+    <span class="t"><img src="${logo(g.awayCode)}" alt="">${esc(g.away)}</span>
+    <span class="sc"><span class="${aw?"win":""}">${g.awayScore}</span> – <span class="${hw?"win":""}">${g.homeScore}</span></span>
+    <span class="t r">${esc(g.home)}<img src="${logo(g.homeCode)}" alt=""></span></div>`;
+}
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("on",x===b));
+  document.querySelectorAll("section").forEach(s=>s.classList.toggle("on",s.id===b.dataset.t));
+});
+$("#refreshBtn").onclick=()=>{ $("#chipTxt").textContent="refreshing…"; load(); };
+load();
+if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script>
+</body>
+</html>
