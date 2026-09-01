@@ -70,6 +70,9 @@
     padding:9px 6px;border-radius:10px;font-size:13.5px}
   .rowt:nth-child(odd){background:rgba(255,255,255,.022)}
   .rowt.me{background:rgba(200,16,46,.16);outline:1px solid rgba(200,16,46,.4)}
+  /* The Climax Series qualifying line: the only cut inside an NPB league, since there are no
+     divisions. Drawn under third rather than as a colour, so it survives a colour-blind read. */
+  .rowt.cut{border-bottom:2px dashed rgba(255,255,255,.32);padding-bottom:12px;margin-bottom:3px}
   .rowt .pos{color:var(--mut);font-size:11px;font-weight:800;text-align:center}
   .rowt .nm{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .rowt .num{font-variant-numeric:tabular-nums;color:var(--mut);font-size:12.5px;min-width:52px;text-align:right}
@@ -105,12 +108,14 @@
     <button class="on" data-t="now">⚡ Now</button>
     <button data-t="standings">📊 Standings</button>
     <button data-t="race">🏁 Race</button>
+    <button data-t="climax">🏆 Climax</button>
     <button data-t="scores">📅 Scores</button>
     <button data-t="league">⚾ League</button>
   </nav>
   <section class="on" id="now"><div id="nowEl"></div></section>
   <section id="standings"><div id="standingsEl"></div></section>
   <section id="race"><div id="raceEl"></div></section>
+  <section id="climax"><div id="climaxEl"></div></section>
   <section id="scores"><div id="scoresEl"></div></section>
   <section id="league"><div id="leagueEl"></div></section>
   <footer>
@@ -169,6 +174,18 @@ function paint(){
         · ${m.g} games played</div>
       <div class="bar"><i style="width:${Math.round((m.w/Math.max(1,m.w+m.l))*100)}%"></i></div>
       <div class="note">Bar is win share. Home ${esc(m.home||"—")} · Road ${esc(m.road||"—")}</div></div>`;
+    const cut=tbl[2], nxt=tbl[3];
+    if(cut){
+      const inField=pos>0&&pos<=3;
+      h+=`<div class="card"><h2>🏆 Climax Series</h2>
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+          <span class="big" style="color:${inField?"var(--live)":"var(--mut)"}">${inField?"IN":"OUT"}</span>
+          <span style="color:var(--mut)">${inField
+            ? `holding ${pos===1?"the pennant spot":pos+(["st","nd","rd"][pos-1]||"th")+" of the three places"}`
+            : `chasing <b style="color:var(--ink)">${esc(cut.short)}</b> for the last place`}</span></div>
+        <div class="note">Top three of six qualify. NPB has no divisions, so this is the only
+        cut that matters. ${inField&&nxt?`Nearest chaser: ${esc(nxt.short)}.`:""}</div></div>`;
+    }
   }
   if(mine.length){
     h+=`<div class="card"><h2>📅 Last time out</h2>${mine.map(gameRow).join("")}
@@ -196,6 +213,29 @@ function paint(){
     }).join("")}
     <div class="note">Longer bar = closer to first. ${lead?`<b>${esc(lead.short)}</b> lead.`:""}</div></div>`;
 
+  // ---- CLIMAX SERIES: NPB's postseason, and the closest thing it has to a division race
+  $("#climaxEl").innerHTML=Object.keys(D.standings).map(lg=>{
+    const rows=D.standings[lg]||[], third=rows[2], fourth=rows[3];
+    const inField=t=>rows.indexOf(t)<3;
+    return `<div class="card"><h2>🏆 ${esc(lg)} League · Climax Series</h2>
+      ${rows.map((t,i)=>{
+        const q=i<3;
+        return `<div class="rowt ${t.code===ME?"me":""} ${i===2?"cut":""}">
+          <span class="pos" style="${q?"color:var(--live)":""}">${i+1}</span>
+          <span class="nm"><img src="${logo(t.code)}" alt="">${esc(t.short)}
+            ${i===0?'<span style="color:var(--gold);font-size:10px;font-weight:800"> PENNANT</span>':""}</span>
+          <span class="num">${t.w}-${t.l}${t.t?`-${t.t}`:""}</span>
+          <span class="num">${t.gb==="--"?"—":esc(t.gb||"")}</span>
+          <span class="num" style="${q?"color:var(--live);font-weight:800":"opacity:.5"}">${q?"IN":"—"}</span></div>`;
+      }).join("")}
+      <div class="note"><b>Top three qualify.</b> NPB has <b>no divisions</b> — two leagues of six,
+      one flat table each. The postseason is the Climax Series: 2nd plays 3rd over three games,
+      the winner plays the pennant winner over six, and the pennant winner starts that round
+      already one win up. Those two survivors meet in the Japan Series.
+      ${third&&fourth?`Cut line sits between <b>${esc(third.short)}</b> and <b>${esc(fourth.short)}</b>.`:""}</div>
+    </div>`;
+  }).join("");
+
   $("#scoresEl").innerHTML=`<div class="card"><h2>📅 ${esc((D.games||[])[0]?.date||"Latest scores")}</h2>
     ${(D.games||[]).map(gameRow).join("")||'<div class="note">No finals published.</div>'}
     <div class="note">Every NPB game from the most recent completed day, both leagues.</div></div>`;
@@ -212,7 +252,9 @@ function paint(){
     .repeat(2)||"NPB "+D.season;
 }
 function teamRow(t,pos){
-  return `<div class="rowt ${t.code===ME?"me":""}">
+  // NPB HAS NO DIVISIONS — the only line that matters inside a league is the Climax Series cut
+  // after third, so that is the line the table draws.
+  return `<div class="rowt ${t.code===ME?"me":""} ${pos===3?"cut":""}">
     <span class="pos">${pos}</span>
     <span class="nm"><img src="${logo(t.code)}" alt="">${esc(t.short)}</span>
     <span class="num">${t.w}-${t.l}${t.t?`-${t.t}`:""}</span>
