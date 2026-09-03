@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "built": "2026-09-03T00:20:05Z",
+ "built": "2026-09-03T12:20:02Z",
  "source": "npb.jp (official) — standings and daily scores, scraped because npb.jp sends no CORS header and there is no official NPB JSON API",
  "teams": {
   "g": {
