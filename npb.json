@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "built": "2026-09-05T12:20:04Z",
+ "built": "2026-09-06T00:20:04Z",
  "source": "npb.jp (official) — standings and daily scores, scraped because npb.jp sends no CORS header and there is no official NPB JSON API",
  "teams": {
   "g": {
@@ -70,79 +70,79 @@
     "code": "t",
     "name": "Hanshin Tigers",
     "short": "Hanshin",
-    "g": 120,
+    "g": 121,
     "w": 69,
-    "l": 50,
+    "l": 51,
     "t": 1,
-    "pct": ".580",
+    "pct": ".575",
     "gb": "--",
-    "home": "30-25 (1)",
+    "home": "30-26 (1)",
     "road": "39-25"
    },
    {
     "code": "g",
     "name": "Yomiuri Giants",
     "short": "Yomiuri",
-    "g": 122,
-    "w": 65,
+    "g": 123,
+    "w": 66,
     "l": 55,
     "t": 2,
-    "pct": ".542",
-    "gb": "4.5",
+    "pct": ".545",
+    "gb": "3.5",
     "home": "31-29 (2)",
-    "road": "34-26"
+    "road": "35-26"
    },
    {
     "code": "db",
     "name": "YOKOHAMA DeNA BAYSTARS",
     "short": "DeNA",
-    "g": 120,
-    "w": 55,
+    "g": 121,
+    "w": 56,
     "l": 62,
     "t": 3,
-    "pct": ".470",
-    "gb": "13.0",
+    "pct": ".475",
+    "gb": "12.0",
     "home": "29-25 (3)",
-    "road": "26-37"
+    "road": "27-37"
    },
    {
     "code": "s",
     "name": "Tokyo Yakult Swallows",
     "short": "Yakult",
-    "g": 121,
+    "g": 122,
     "w": 53,
-    "l": 66,
+    "l": 67,
     "t": 2,
-    "pct": ".445",
+    "pct": ".442",
     "gb": "16.0",
-    "home": "25-32 (2)",
+    "home": "25-33 (2)",
     "road": "28-34"
-   },
-   {
-    "code": "c",
-    "name": "Hiroshima Toyo Carp",
-    "short": "Hiroshima",
-    "g": 118,
-    "w": 49,
-    "l": 65,
-    "t": 4,
-    "pct": ".430",
-    "gb": "17.5",
-    "home": "29-31 (1)",
-    "road": "20-34 (3)"
    },
    {
     "code": "d",
     "name": "Chunichi Dragons",
     "short": "Chunichi",
-    "g": 125,
-    "w": 52,
+    "g": 126,
+    "w": 53,
     "l": 71,
     "t": 2,
-    "pct": ".423",
-    "gb": "19.0",
+    "pct": ".427",
+    "gb": "18.0",
     "home": "36-32",
-    "road": "16-39 (2)"
+    "road": "17-39 (2)"
+   },
+   {
+    "code": "c",
+    "name": "Hiroshima Toyo Carp",
+    "short": "Hiroshima",
+    "g": 119,
+    "w": 49,
+    "l": 66,
+    "t": 4,
+    "pct": ".426",
+    "gb": "17.5",
+    "home": "29-32 (1)",
+    "road": "20-34 (3)"
    }
   ],
   "Pacific": [
@@ -150,103 +150,112 @@
     "code": "h",
     "name": "Fukuoka SoftBank Hawks",
     "short": "SoftBank",
-    "g": 121,
-    "w": 74,
+    "g": 122,
+    "w": 75,
     "l": 44,
     "t": 3,
-    "pct": ".627",
+    "pct": ".630",
     "gb": "--",
-    "home": "38-22",
+    "home": "39-22",
     "road": "36-22 (3)"
    },
    {
     "code": "l",
     "name": "Saitama Seibu Lions",
     "short": "Seibu",
-    "g": 123,
+    "g": 124,
     "w": 69,
-    "l": 51,
+    "l": 52,
     "t": 3,
-    "pct": ".575",
-    "gb": "6.0",
+    "pct": ".570",
+    "gb": "7.0",
     "home": "38-26 (1)",
-    "road": "31-25 (2)"
+    "road": "31-26 (2)"
    },
    {
     "code": "f",
     "name": "Hokkaido Nippon-Ham Fighters",
     "short": "Nippon-Ham",
-    "g": 124,
-    "w": 69,
+    "g": 125,
+    "w": 70,
     "l": 53,
     "t": 2,
-    "pct": ".566",
+    "pct": ".569",
     "gb": "7.0",
     "home": "39-23 (2)",
-    "road": "30-30"
+    "road": "31-30"
    },
    {
     "code": "b",
     "name": "ORIX Buffaloes",
     "short": "ORIX",
-    "g": 123,
-    "w": 58,
+    "g": 124,
+    "w": 59,
     "l": 63,
     "t": 2,
-    "pct": ".479",
+    "pct": ".484",
     "gb": "17.5",
-    "home": "38-20 (1)",
+    "home": "39-20 (1)",
     "road": "20-43 (1)"
    },
    {
     "code": "m",
     "name": "Chiba Lotte Marines",
     "short": "Lotte",
-    "g": 117,
+    "g": 118,
     "w": 53,
-    "l": 61,
+    "l": 62,
     "t": 3,
-    "pct": ".465",
-    "gb": "19.0",
+    "pct": ".461",
+    "gb": "20.0",
     "home": "31-23 (1)",
-    "road": "22-38 (2)"
+    "road": "22-39 (2)"
    },
    {
     "code": "e",
     "name": "Tohoku Rakuten Golden Eagles",
     "short": "Rakuten",
-    "g": 120,
+    "g": 121,
     "w": 47,
-    "l": 72,
+    "l": 73,
     "t": 1,
-    "pct": ".395",
-    "gb": "27.5",
-    "home": "28-33",
+    "pct": ".392",
+    "gb": "28.5",
+    "home": "28-34",
     "road": "19-39 (1)"
    }
   ]
  },
  "games": [
   {
-   "date": "Friday, September 4, 2026",
+   "date": "Saturday, September 5, 2026",
    "away": "Yakult",
    "awayCode": "s",
-   "awayScore": 1,
+   "awayScore": 4,
    "home": "Chunichi",
    "homeCode": "d",
-   "homeScore": 1
+   "homeScore": 8
   },
   {
-   "date": "Friday, September 4, 2026",
-   "away": "Hiroshima",
-   "awayCode": "c",
-   "awayScore": 1,
-   "home": "Yomiuri",
-   "homeCode": "g",
+   "date": "Saturday, September 5, 2026",
+   "away": "Hanshin",
+   "awayCode": "t",
+   "awayScore": 2,
+   "home": "DeNA",
+   "homeCode": "db",
    "homeScore": 3
   },
   {
-   "date": "Friday, September 4, 2026",
+   "date": "Saturday, September 5, 2026",
+   "away": "Hiroshima",
+   "awayCode": "c",
+   "awayScore": 5,
+   "home": "Yomiuri",
+   "homeCode": "g",
+   "homeScore": 10
+  },
+  {
+   "date": "Saturday, September 5, 2026",
    "away": "Rakuten",
    "awayCode": "e",
    "awayScore": 2,
@@ -255,22 +264,22 @@
    "homeScore": 5
   },
   {
-   "date": "Friday, September 4, 2026",
+   "date": "Saturday, September 5, 2026",
    "away": "ORIX",
    "awayCode": "b",
-   "awayScore": 3,
+   "awayScore": 7,
    "home": "Lotte",
    "homeCode": "m",
-   "homeScore": 1
+   "homeScore": 6
   },
   {
-   "date": "Friday, September 4, 2026",
+   "date": "Saturday, September 5, 2026",
    "away": "SoftBank",
    "awayCode": "h",
-   "awayScore": 8,
+   "awayScore": 2,
    "home": "Seibu",
    "homeCode": "l",
-   "homeScore": 2
+   "homeScore": 0
   }
  ]
 }
