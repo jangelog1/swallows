@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "built": "2026-09-16T12:20:05Z",
+ "built": "2026-09-17T00:20:05Z",
  "source": "npb.jp (official) — standings and daily scores, scraped because npb.jp sends no CORS header and there is no official NPB JSON API",
  "teams": {
   "g": {
@@ -150,14 +150,14 @@
     "code": "h",
     "name": "Fukuoka SoftBank Hawks",
     "short": "SoftBank",
-    "g": 130,
-    "w": 82,
+    "g": 131,
+    "w": 83,
     "l": 45,
     "t": 3,
-    "pct": ".646",
+    "pct": ".648",
     "gb": "--",
     "home": "45-23",
-    "road": "37-22 (3)"
+    "road": "38-22 (3)"
    },
    {
     "code": "l",
@@ -168,7 +168,7 @@
     "l": 55,
     "t": 4,
     "pct": ".570",
-    "gb": "9.5",
+    "gb": "10.0",
     "home": "38-27 (2)",
     "road": "35-28 (2)"
    },
@@ -181,7 +181,7 @@
     "l": 57,
     "t": 3,
     "pct": ".558",
-    "gb": "11.0",
+    "gb": "11.5",
     "home": "39-24 (2)",
     "road": "33-33 (1)"
    },
@@ -189,97 +189,61 @@
     "code": "b",
     "name": "ORIX Buffaloes",
     "short": "ORIX",
-    "g": 131,
+    "g": 132,
     "w": 61,
-    "l": 68,
+    "l": 69,
     "t": 2,
-    "pct": ".473",
-    "gb": "22.0",
-    "home": "41-25 (1)",
+    "pct": ".469",
+    "gb": "23.0",
+    "home": "41-26 (1)",
     "road": "20-43 (1)"
    },
    {
     "code": "m",
     "name": "Chiba Lotte Marines",
     "short": "Lotte",
-    "g": 126,
+    "g": 127,
     "w": 58,
-    "l": 65,
+    "l": 66,
     "t": 3,
-    "pct": ".472",
-    "gb": "22.0",
-    "home": "34-23 (1)",
+    "pct": ".468",
+    "gb": "23.0",
+    "home": "34-24 (1)",
     "road": "24-42 (2)"
    },
    {
     "code": "e",
     "name": "Tohoku Rakuten Golden Eagles",
     "short": "Rakuten",
-    "g": 127,
-    "w": 48,
+    "g": 128,
+    "w": 49,
     "l": 78,
     "t": 1,
-    "pct": ".381",
+    "pct": ".386",
     "gb": "33.5",
     "home": "29-35",
-    "road": "19-43 (1)"
+    "road": "20-43 (1)"
    }
   ]
  },
  "games": [
   {
-   "date": "Tuesday, September 15, 2026",
-   "away": "Yakult",
-   "awayCode": "s",
-   "awayScore": 4,
-   "home": "Hiroshima",
-   "homeCode": "c",
-   "homeScore": 9
-  },
-  {
-   "date": "Tuesday, September 15, 2026",
-   "away": "DeNA",
-   "awayCode": "db",
-   "awayScore": 13,
-   "home": "Yomiuri",
-   "homeCode": "g",
-   "homeScore": 2
-  },
-  {
-   "date": "Tuesday, September 15, 2026",
-   "away": "Hanshin",
-   "awayCode": "t",
-   "awayScore": 1,
-   "home": "Chunichi",
-   "homeCode": "d",
+   "date": "Wednesday, September 16, 2026",
+   "away": "Lotte",
+   "awayCode": "m",
+   "awayScore": 0,
+   "home": "Rakuten",
+   "homeCode": "e",
    "homeScore": 4
   },
   {
-   "date": "Tuesday, September 15, 2026",
-   "away": "Nippon-Ham",
-   "awayCode": "f",
-   "awayScore": 6,
-   "home": "Lotte",
-   "homeCode": "m",
-   "homeScore": 7
-  },
-  {
-   "date": "Tuesday, September 15, 2026",
-   "away": "Rakuten",
-   "awayCode": "e",
-   "awayScore": 1,
-   "home": "Seibu",
-   "homeCode": "l",
-   "homeScore": 0
-  },
-  {
-   "date": "Tuesday, September 15, 2026",
+   "date": "Wednesday, September 16, 2026",
    "away": "ORIX",
    "awayCode": "b",
-   "awayScore": 3,
+   "awayScore": 0,
    "home": "SoftBank",
    "homeCode": "h",
-   "homeScore": 5
+   "homeScore": 4
   }
  ]
 }
