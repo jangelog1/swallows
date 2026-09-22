@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "built": "2026-09-21T12:20:04Z",
+ "built": "2026-09-22T00:20:04Z",
  "source": "npb.jp (official) — standings and daily scores, scraped because npb.jp sends no CORS header and there is no official NPB JSON API",
  "teams": {
   "g": {
@@ -70,13 +70,13 @@
     "code": "t",
     "name": "Hanshin Tigers",
     "short": "Hanshin",
-    "g": 131,
-    "w": 72,
+    "g": 132,
+    "w": 73,
     "l": 58,
     "t": 1,
-    "pct": ".554",
+    "pct": ".557",
     "gb": "--",
-    "home": "33-32 (1)",
+    "home": "34-32 (1)",
     "road": "39-26"
    },
    {
@@ -88,7 +88,7 @@
     "l": 59,
     "t": 2,
     "pct": ".553",
-    "gb": "0.0",
+    "gb": "0.5",
     "home": "37-30 (2)",
     "road": "36-29"
    },
@@ -96,14 +96,27 @@
     "code": "db",
     "name": "YOKOHAMA DeNA BAYSTARS",
     "short": "DeNA",
-    "g": 134,
+    "g": 135,
     "w": 66,
-    "l": 65,
+    "l": 66,
     "t": 3,
-    "pct": ".504",
-    "gb": "6.5",
+    "pct": ".500",
+    "gb": "7.5",
     "home": "35-27 (3)",
-    "road": "31-38"
+    "road": "31-39"
+   },
+   {
+    "code": "d",
+    "name": "Chunichi Dragons",
+    "short": "Chunichi",
+    "g": 137,
+    "w": 59,
+    "l": 76,
+    "t": 2,
+    "pct": ".437",
+    "gb": "16.0",
+    "home": "38-33",
+    "road": "21-43 (2)"
    },
    {
     "code": "s",
@@ -114,35 +127,22 @@
     "l": 74,
     "t": 2,
     "pct": ".435",
-    "gb": "15.5",
+    "gb": "16.0",
     "home": "26-36 (2)",
     "road": "31-38"
-   },
-   {
-    "code": "d",
-    "name": "Chunichi Dragons",
-    "short": "Chunichi",
-    "g": 136,
-    "w": 58,
-    "l": 76,
-    "t": 2,
-    "pct": ".433",
-    "gb": "16.0",
-    "home": "37-33",
-    "road": "21-43 (2)"
    },
    {
     "code": "c",
     "name": "Hiroshima Toyo Carp",
     "short": "Hiroshima",
-    "g": 130,
+    "g": 131,
     "w": 53,
-    "l": 73,
+    "l": 74,
     "t": 4,
-    "pct": ".421",
-    "gb": "17.0",
+    "pct": ".417",
+    "gb": "18.0",
     "home": "29-35 (1)",
-    "road": "24-38 (3)"
+    "road": "24-39 (3)"
    }
   ],
   "Pacific": [
@@ -176,27 +176,27 @@
     "code": "f",
     "name": "Hokkaido Nippon-Ham Fighters",
     "short": "Nippon-Ham",
-    "g": 135,
-    "w": 73,
+    "g": 136,
+    "w": 74,
     "l": 59,
     "t": 3,
-    "pct": ".553",
-    "gb": "11.5",
-    "home": "40-26 (2)",
+    "pct": ".556",
+    "gb": "11.0",
+    "home": "41-26 (2)",
     "road": "33-33 (1)"
    },
    {
     "code": "b",
     "name": "ORIX Buffaloes",
     "short": "ORIX",
-    "g": 135,
+    "g": 136,
     "w": 63,
-    "l": 70,
+    "l": 71,
     "t": 2,
-    "pct": ".474",
-    "gb": "22.0",
+    "pct": ".470",
+    "gb": "22.5",
     "home": "41-27 (1)",
-    "road": "22-43 (1)"
+    "road": "22-44 (1)"
    },
    {
     "code": "m",
@@ -228,48 +228,30 @@
  },
  "games": [
   {
-   "date": "Sunday, September 20, 2026",
-   "away": "Yomiuri",
-   "awayCode": "g",
+   "date": "Monday, September 21, 2026",
+   "away": "Chunichi",
+   "awayCode": "d",
+   "awayScore": 10,
+   "home": "Hiroshima",
+   "homeCode": "c",
+   "homeScore": 0
+  },
+  {
+   "date": "Monday, September 21, 2026",
+   "away": "Hanshin",
+   "awayCode": "t",
    "awayScore": 3,
-   "home": "Yakult",
-   "homeCode": "s",
+   "home": "DeNA",
+   "homeCode": "db",
    "homeScore": 2
   },
   {
-   "date": "Sunday, September 20, 2026",
-   "away": "Chunichi",
-   "awayCode": "d",
-   "awayScore": 8,
-   "home": "Hiroshima",
-   "homeCode": "c",
-   "homeScore": 5
-  },
-  {
-   "date": "Sunday, September 20, 2026",
-   "away": "Hanshin",
-   "awayCode": "t",
-   "awayScore": 8,
-   "home": "DeNA",
-   "homeCode": "db",
-   "homeScore": 1
-  },
-  {
-   "date": "Sunday, September 20, 2026",
+   "date": "Monday, September 21, 2026",
    "away": "Nippon-Ham",
    "awayCode": "f",
-   "awayScore": 6,
+   "awayScore": 5,
    "home": "ORIX",
    "homeCode": "b",
-   "homeScore": 9
-  },
-  {
-   "date": "Sunday, September 20, 2026",
-   "away": "Rakuten",
-   "awayCode": "e",
-   "awayScore": 5,
-   "home": "SoftBank",
-   "homeCode": "h",
    "homeScore": 3
   }
  ]
