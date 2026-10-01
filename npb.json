@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "built": "2026-09-30T12:20:00Z",
+ "built": "2026-10-01T00:20:00Z",
  "source": "npb.jp (official) — standings and daily scores, scraped because npb.jp sends no CORS header and there is no official NPB JSON API",
  "teams": {
   "g": {
@@ -70,13 +70,13 @@
     "code": "t",
     "name": "Hanshin Tigers",
     "short": "Hanshin",
-    "g": 136,
-    "w": 76,
+    "g": 137,
+    "w": 77,
     "l": 59,
     "t": 1,
-    "pct": ".563",
+    "pct": ".566",
     "gb": "--",
-    "home": "34-32 (1)",
+    "home": "35-32 (1)",
     "road": "42-27"
    },
    {
@@ -88,7 +88,7 @@
     "l": 62,
     "t": 2,
     "pct": ".551",
-    "gb": "1.5",
+    "gb": "2.0",
     "home": "39-30 (2)",
     "road": "37-32"
    },
@@ -101,21 +101,8 @@
     "l": 69,
     "t": 3,
     "pct": ".500",
-    "gb": "8.5",
+    "gb": "9.0",
     "home": "38-30 (3)",
-    "road": "31-39"
-   },
-   {
-    "code": "s",
-    "name": "Tokyo Yakult Swallows",
-    "short": "Yakult",
-    "g": 138,
-    "w": 59,
-    "l": 77,
-    "t": 2,
-    "pct": ".434",
-    "gb": "17.5",
-    "home": "28-38 (2)",
     "road": "31-39"
    },
    {
@@ -127,9 +114,22 @@
     "l": 76,
     "t": 4,
     "pct": ".433",
-    "gb": "17.5",
+    "gb": "18.0",
     "home": "32-36 (1)",
     "road": "26-40 (3)"
+   },
+   {
+    "code": "s",
+    "name": "Tokyo Yakult Swallows",
+    "short": "Yakult",
+    "g": 139,
+    "w": 59,
+    "l": 78,
+    "t": 2,
+    "pct": ".431",
+    "gb": "18.5",
+    "home": "28-38 (2)",
+    "road": "31-40"
    },
    {
     "code": "d",
@@ -140,7 +140,7 @@
     "l": 80,
     "t": 2,
     "pct": ".424",
-    "gb": "19.0",
+    "gb": "19.5",
     "home": "38-33",
     "road": "21-47 (2)"
    }
@@ -202,57 +202,48 @@
     "code": "m",
     "name": "Chiba Lotte Marines",
     "short": "Lotte",
-    "g": 136,
+    "g": 137,
     "w": 61,
-    "l": 72,
+    "l": 73,
     "t": 3,
-    "pct": ".459",
-    "gb": "26.5",
+    "pct": ".455",
+    "gb": "27.0",
     "home": "35-29 (1)",
-    "road": "26-43 (2)"
+    "road": "26-44 (2)"
    },
    {
     "code": "e",
     "name": "Tohoku Rakuten Golden Eagles",
     "short": "Rakuten",
-    "g": 138,
-    "w": 55,
+    "g": 139,
+    "w": 56,
     "l": 82,
     "t": 1,
-    "pct": ".401",
-    "gb": "34.5",
-    "home": "31-36",
+    "pct": ".406",
+    "gb": "34.0",
+    "home": "32-36",
     "road": "24-46 (1)"
    }
   ]
  },
  "games": [
   {
-   "date": "Tuesday, September 29, 2026",
-   "away": "Yomiuri",
-   "awayCode": "g",
-   "awayScore": 3,
-   "home": "Hiroshima",
-   "homeCode": "c",
-   "homeScore": 1
+   "date": "Wednesday, September 30, 2026",
+   "away": "Hanshin",
+   "awayCode": "t",
+   "awayScore": 5,
+   "home": "Yakult",
+   "homeCode": "s",
+   "homeScore": 0
   },
   {
-   "date": "Tuesday, September 29, 2026",
+   "date": "Wednesday, September 30, 2026",
    "away": "Rakuten",
    "awayCode": "e",
    "awayScore": 3,
    "home": "Lotte",
    "homeCode": "m",
-   "homeScore": 6
-  },
-  {
-   "date": "Tuesday, September 29, 2026",
-   "away": "Seibu",
-   "awayCode": "l",
-   "awayScore": 2,
-   "home": "ORIX",
-   "homeCode": "b",
-   "homeScore": 1
+   "homeScore": 0
   }
  ]
 }
