@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "built": "2026-10-05T10:20:02Z",
+ "built": "2026-10-05T22:20:04Z",
  "source": "npb.jp (official) — standings and daily scores, scraped because npb.jp sends no CORS header and there is no official NPB JSON API",
  "teams": {
   "g": {
@@ -150,27 +150,27 @@
     "code": "h",
     "name": "Fukuoka SoftBank Hawks",
     "short": "SoftBank",
-    "g": 142,
+    "g": 143,
     "w": 91,
-    "l": 48,
+    "l": 49,
     "t": 3,
-    "pct": ".655",
+    "pct": ".650",
     "gb": "--",
     "home": "49-23",
-    "road": "42-25 (3)"
+    "road": "42-26 (3)"
    },
    {
     "code": "l",
     "name": "Saitama Seibu Lions",
     "short": "Seibu",
-    "g": 141,
-    "w": 77,
+    "g": 142,
+    "w": 78,
     "l": 60,
     "t": 4,
-    "pct": ".562",
-    "gb": "13.0",
+    "pct": ".565",
+    "gb": "12.0",
     "home": "41-29 (2)",
-    "road": "36-31 (2)"
+    "road": "37-31 (2)"
    },
    {
     "code": "f",
@@ -181,7 +181,7 @@
     "l": 62,
     "t": 3,
     "pct": ".557",
-    "gb": "13.5",
+    "gb": "13.0",
     "home": "42-28 (2)",
     "road": "36-34 (1)"
    },
@@ -194,7 +194,7 @@
     "l": 76,
     "t": 2,
     "pct": ".461",
-    "gb": "27.0",
+    "gb": "26.5",
     "home": "41-29 (1)",
     "road": "24-47 (1)"
    },
@@ -202,57 +202,48 @@
     "code": "m",
     "name": "Chiba Lotte Marines",
     "short": "Lotte",
-    "g": 141,
+    "g": 142,
     "w": 63,
-    "l": 75,
+    "l": 76,
     "t": 3,
-    "pct": ".457",
+    "pct": ".453",
     "gb": "27.5",
-    "home": "37-31 (1)",
+    "home": "37-32 (1)",
     "road": "26-44 (2)"
    },
    {
     "code": "e",
     "name": "Tohoku Rakuten Golden Eagles",
     "short": "Rakuten",
-    "g": 142,
-    "w": 57,
+    "g": 143,
+    "w": 58,
     "l": 84,
     "t": 1,
-    "pct": ".404",
-    "gb": "35.0",
-    "home": "33-37",
+    "pct": ".408",
+    "gb": "34.0",
+    "home": "34-37",
     "road": "24-47 (1)"
    }
   ]
  },
  "games": [
   {
-   "date": "Sunday, October 4, 2026",
-   "away": "Yakult",
-   "awayCode": "s",
-   "awayScore": 4,
-   "home": "Hiroshima",
-   "homeCode": "c",
-   "homeScore": 7
-  },
-  {
-   "date": "Sunday, October 4, 2026",
-   "away": "DeNA",
-   "awayCode": "db",
-   "awayScore": 2,
-   "home": "Hanshin",
-   "homeCode": "t",
+   "date": "Monday, October 5, 2026",
+   "away": "Rakuten",
+   "awayCode": "e",
+   "awayScore": 3,
+   "home": "SoftBank",
+   "homeCode": "h",
    "homeScore": 1
   },
   {
-   "date": "Sunday, October 4, 2026",
+   "date": "Monday, October 5, 2026",
    "away": "Lotte",
    "awayCode": "m",
-   "awayScore": 3,
-   "home": "Rakuten",
-   "homeCode": "e",
-   "homeScore": 2
+   "awayScore": 1,
+   "home": "Seibu",
+   "homeCode": "l",
+   "homeScore": 7
   }
  ]
 }
