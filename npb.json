@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "built": "2026-10-06T22:20:03Z",
+ "built": "2026-10-10T12:20:04Z",
  "source": "npb.jp (official) — standings and daily scores, scraped because npb.jp sends no CORS header and there is no official NPB JSON API",
  "teams": {
   "g": {
@@ -70,13 +70,13 @@
     "code": "t",
     "name": "Hanshin Tigers",
     "short": "Hanshin",
-    "g": 141,
-    "w": 78,
-    "l": 61,
+    "g": 143,
+    "w": 79,
+    "l": 62,
     "t": 2,
-    "pct": ".561",
+    "pct": ".560",
     "gb": "--",
-    "home": "36-32 (2)",
+    "home": "37-33 (2)",
     "road": "42-29"
    },
    {
@@ -109,27 +109,27 @@
     "code": "c",
     "name": "Hiroshima Toyo Carp",
     "short": "Hiroshima",
-    "g": 142,
+    "g": 143,
     "w": 61,
-    "l": 77,
+    "l": 78,
     "t": 4,
-    "pct": ".442",
-    "gb": "16.5",
+    "pct": ".439",
+    "gb": "17.0",
     "home": "34-36 (1)",
-    "road": "27-41 (3)"
+    "road": "27-42 (3)"
    },
    {
     "code": "s",
     "name": "Tokyo Yakult Swallows",
     "short": "Yakult",
-    "g": 142,
-    "w": 60,
+    "g": 143,
+    "w": 61,
     "l": 80,
     "t": 2,
-    "pct": ".429",
-    "gb": "18.5",
+    "pct": ".433",
+    "gb": "18.0",
     "home": "29-40 (2)",
-    "road": "31-40"
+    "road": "32-40"
    },
    {
     "code": "d",
@@ -228,22 +228,13 @@
  },
  "games": [
   {
-   "date": "Tuesday, October 6, 2026",
+   "date": "Thursday, October 8, 2026",
    "away": "Hanshin",
    "awayCode": "t",
-   "awayScore": 2,
-   "home": "Hiroshima",
-   "homeCode": "c",
-   "homeScore": 1
-  },
-  {
-   "date": "Tuesday, October 6, 2026",
-   "away": "Lotte",
-   "awayCode": "m",
    "awayScore": 0,
-   "home": "Seibu",
-   "homeCode": "l",
-   "homeScore": 3
+   "home": "Yakult",
+   "homeCode": "s",
+   "homeScore": 4
   }
  ]
 }
