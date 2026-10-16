@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "built": "2026-10-15T12:20:06Z",
+ "built": "2026-10-16T00:20:12Z",
  "source": "npb.jp (official) — standings and daily scores, scraped because npb.jp sends no CORS header and there is no official NPB JSON API",
  "teams": {
   "g": {
@@ -228,22 +228,22 @@
  },
  "games": [
   {
-   "date": "Wednesday, October 14, 2026",
+   "date": "Thursday, October 15, 2026",
    "away": "Hanshin",
    "awayCode": "t",
    "awayScore": 0,
    "home": "DeNA",
    "homeCode": "db",
-   "homeScore": 2
+   "homeScore": 1
   },
   {
-   "date": "Wednesday, October 14, 2026",
+   "date": "Thursday, October 15, 2026",
    "away": "SoftBank",
    "awayCode": "h",
    "awayScore": 6,
    "home": "Nippon-Ham",
    "homeCode": "f",
-   "homeScore": 4
+   "homeScore": 2
   }
  ]
 }
