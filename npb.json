@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "built": "2026-10-21T00:20:43Z",
+ "built": "2026-10-28T12:20:09Z",
  "source": "npb.jp (official) — standings and daily scores, scraped because npb.jp sends no CORS header and there is no official NPB JSON API",
  "teams": {
   "g": {
@@ -226,5 +226,15 @@
    }
   ]
  },
- "games": []
+ "games": [
+  {
+   "date": "Tuesday, October 27, 2026",
+   "away": "SoftBank",
+   "awayCode": "h",
+   "awayScore": 2,
+   "home": "DeNA",
+   "homeCode": "db",
+   "homeScore": 1
+  }
+ ]
 }
